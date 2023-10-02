@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LS Digital Clock Js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        Made With Love By Lalith Srinivas
+    </footer>
+<script>
+    let hrs = document.getElementById("hrs"); // Corrected from getElementsById to getElementById
+    let min = document.getElementById("min"); // Corrected from getElementsById to getElementById
+    let sec = document.getElementById('sec'); // Corrected from getElementsById to getElementById
+
+    function updateClock() {
+        let currentTime = new Date();
+
+        let hours = currentTime.getHours().toString().padStart(2, '0');
+        let minutes = currentTime.getMinutes().toString().padStart(2, '0');
+        let seconds = currentTime.getSeconds().toString().padStart(2, '0');
+
+        hrs.innerHTML = hours;
+        min.innerHTML = minutes;
+        sec.innerHTML = seconds;
+    }
+
+    // Update the clock every second
+    setInterval(updateClock, 1000);
+
+    // Initial call to set the clock
+    updateClock();
+</script>
+</body>
+</html>
